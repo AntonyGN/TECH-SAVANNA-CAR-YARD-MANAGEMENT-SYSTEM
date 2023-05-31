@@ -72,7 +72,7 @@ class CardetailsController extends Controller
         $cardetail = Cardetails::find($id);
         $input = $request->all();
         $cardetail->update($input);
-        return redirect('cardetails')->with('flash_message', 'cardetail updated');
+        return redirect('cardetails')->with('flash_message', 'cardetails updated');
 
     }
 
@@ -80,6 +80,6 @@ class CardetailsController extends Controller
     public function destroy($id)
     {
         Cardetails::destroy($id);
-        return redirect('cardetails')->with('flash_message','Cardetail updated');
+        return redirect('cardetails')->with('flash_message','Cardetails updated');
     }
 }
