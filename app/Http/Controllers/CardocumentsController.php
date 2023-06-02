@@ -83,7 +83,7 @@ class CardocumentsController extends Controller
      */
     public function destroy($id)
     {
-        Cardocument::destroy($id);
-        return redirect('cardocument')->with('flash_message','Cardocument updated');
+        Cardocuments::destroy($id);
+        return redirect('cardocuments')->with('flash_message','Car document updated');
     }
 }
