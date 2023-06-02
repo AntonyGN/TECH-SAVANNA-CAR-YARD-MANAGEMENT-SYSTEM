@@ -3,11 +3,13 @@
 
 @section('content')
     @include('layouts.navbars.auth.topnav', ['title' => 'Your Profile'])
-
+    <div class="container">
+        <div class="row">
+            <div class="col-md-11">
                 <div class="card">
-                    <div class="card-header">Cardocuments</div>
+                    <div class="card-header">Car-details</div>
                     <div class="card-body">
-                        <a href="{{ url('/cardocuments/create') }}" class="btn btn-success btn-sm" title="Add New Cardocument">
+                        <a href="{{ url('/cardetails/create') }}" class="btn btn-success btn-sm" title="Add New detail">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
                         <br/>
@@ -17,29 +19,32 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Logbook</th>
-                                        <th>Registrationdocument</th>
-                                        <th>Roadworthiness</th>
-                                        <th>Actions</th>
+                                        <th>Make</th>
+                                        <th>Model</th>
+                                        <th>Fueltype</th>
+                                        <th>YearofManufacture</th>
+                                        <th>Transmission</th>
+                                        <th>ChassisNo</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($cardocuments as $item)
+                                @foreach($cardetails as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->logbook}}</td>
-                                        <td>{{ $item->registrationdocument }}</td>
-                                        <td>{{ $item->roadworthiness }}</td>
-                                        <td>{{ $item->actions }}</td>
- 
+                                        <td>{{ $item->make }}</td>
+                                        <td>{{ $item->model }}</td>
+                                        <td>{{ $item->fueltype  }}</td>
+                                        <td>{{ $item->yearofmanufacture}}</td>
+                                        <td>{{ $item->transmission }}</td>
+                                        <td>{{ $item->chassisno }}</td>
+
                                         <td>
-                                            <a href="{{ url('/cardocuments/' . $item->id) }}" title="View documentt"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/cardocuments/' . $item->id . '/edit') }}" title="Edit document"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
- 
-                                            <form method="POST" action="{{ url('/cardocuments' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                            <a href="{{ url('/cardetails/' . $item->id) }}" title="View Car"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a href="{{ url('/cardetails/' . $item->id . '/edit') }}" title="Edit Car"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <form method="POST" action="{{ url('/cardetails' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete document" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Car" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                                             </form>
                                         </td>
                                     </tr>
@@ -47,9 +52,9 @@
                                 </tbody>
                             </table>
                         </div>
- 
                     </div>
                 </div>
-            
-     
-<!-- @endsection -->
+            </div>
+        </div>
+    </div>
+@endsection
