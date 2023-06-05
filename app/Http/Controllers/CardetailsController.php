@@ -34,12 +34,26 @@ class CardetailsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $input = $request->all();
-        Cardetails::create($input);
-        return redirect('cardetails')->with('flash_message','Cardetails added');
-    }
+
+     public function store(Request $request)
+{
+    $request->validate([
+        'make' => 'required',
+        'model' => 'required',
+        'fueltype' => 'required',
+        'yearofmanufacture' => 'required',
+        'transmission' => 'required',
+        'chassisno' => 'required|unique:cardetails',
+    ], [
+        'chassisno.unique' => 'The chassis number must be unique.',
+    ]);
+
+    $input = $request->all();
+    Cardetails::create($input);
+
+    return redirect('cardetails')->with('flash_message', 'Car details added successfully.');
+}
+
     public function show($id)
     {
         $cardetail = Cardetails::find($id);
@@ -72,14 +86,19 @@ class CardetailsController extends Controller
         $cardetail = Cardetails::find($id);
         $input = $request->all();
         $cardetail->update($input);
-        return redirect('cardetails')->with('flash_message', 'cardetails updated');
+        return redirect('cardetails')->with('flash_message', 'cardetail updated');
 
     }
 
-   
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy($id)
     {
         Cardetails::destroy($id);
-        return redirect('cardetails')->with('flash_message','Cardetails updated');
+        return redirect('cardetails')->with('flash_message','Cardetail updated');
     }
 }
