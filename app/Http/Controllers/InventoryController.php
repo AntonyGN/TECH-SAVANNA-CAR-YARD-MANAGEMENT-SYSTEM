@@ -2,14 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Inventory;
 use Illuminate\Http\Request;
 
 class InventoryController extends Controller
 {
+
+    public function index()
+    {
+        $inventory = Inventory::all();
+        return view('inventory.index')->with('inventory', $inventory);
+    }
     
     public function create()
     {
-        return view('invetory.create');
+        return view('inventory.create');
     }
  
   
@@ -17,37 +24,37 @@ class InventoryController extends Controller
     {
         $input = $request->all();
         Contact::create($input);
-        return redirect('invetory')->with('flash_message', 'Invetory Addedd!');  
+        return redirect('inventory')->with('flash_message', 'Inventory Addedd!');  
     }
  
     
     public function show($id)
     {
-        $invetory = Invetory::find($id);
-        return view('invetory.show')->with('invetory', $contact);
+        $inventory = Inventory::find($id);
+        return view('inventory.show')->with('inventory', $contact);
     }
  
     
     public function edit($id)
     {
-        $invetory = Invetory::find($id);
-        return view('invetory.edit')->with('invetory', $contact);
+        $inventory = Inventory::find($id);
+        return view('inventory.edit')->with('inventory', $contact);
     }
  
   
     public function update(Request $request, $id)
     {
-        $invetory = Invetory::find($id);
+        $inventory = Inventory::find($id);
         $input = $request->all();
         $contact->update($input);
-        return redirect('invetory')->with('flash_message', 'Invetory Updated!');  
+        return redirect('inventory')->with('flash_message', 'Inventory Updated!');  
     }
  
   
     public function destroy($id)
     {
         inventory::destroy($id);
-        return redirect('invetory')->with('flash_message', 'Invetory deleted!');  
+        return redirect('inventory')->with('flash_message', 'Inventory deleted!');  
     }
 }
 
