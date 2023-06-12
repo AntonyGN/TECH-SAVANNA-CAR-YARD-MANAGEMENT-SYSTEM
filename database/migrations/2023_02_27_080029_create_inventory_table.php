@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('inventory', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-             $table->string('Car-type');
-             $table->string('Car-model');
-             $table->string('Available-cars');
-             $table->string('Sold-cars');
+             $table->string('cartype');
+             $table->string('carmodel');
+             $table->string('availablecars');
+             $table->string('soldcars');
+             $table->timestamps();
         });
     }
 
