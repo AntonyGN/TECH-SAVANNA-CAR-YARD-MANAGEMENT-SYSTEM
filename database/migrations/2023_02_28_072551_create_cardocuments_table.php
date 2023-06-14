@@ -15,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('cardocuments', function (Blueprint $table) {
             $table->id();
+            $table->string('logbook')->default('');
+            $table->string('registrationdocument')->default('');
+            $table->string('roadworthiness')->default('');
+            $table->binary('document')->nullable();
+
             $table->timestamps();
-             $table->string('logbook');
-             $table->string('registrationdocument');
-             $table->string('roadworthiness');
         });
     }
 
