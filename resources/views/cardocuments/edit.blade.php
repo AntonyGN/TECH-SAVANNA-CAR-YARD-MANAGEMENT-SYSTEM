@@ -1,8 +1,12 @@
-@extends('cardocuments.layout')
+@extends('layouts.app', ['class' => 'g-sidenav-show bg-gray-100'])
+
 @section('content')
- 
-<div class="card">
-  <div class="card-header">Cardocuments Page</div>
+    @include('layouts.navbars.auth.topnav', ['title' => 'Car Documents'])
+
+    <div class="card"> 
+
+    <div class="card">
+  <div class="card-header"><h2>Car documents Page</h2></div>
   <div class="card-body">
       
       <form action="{{ url('cardocuments/' .$cardocuments->id) }}" method="post">
@@ -19,6 +23,9 @@
     </form>
    
   </div>
-</div>
- 
-@stop
+</div>  
+
+
+
+    </div>
+@endsection
