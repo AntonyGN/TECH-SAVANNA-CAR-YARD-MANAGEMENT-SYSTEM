@@ -66,6 +66,8 @@ Route::get('/change-password', [ChangePassword::class, 'show'])->middleware('gue
 Route::post('/change-password', [ChangePassword::class, 'update'])->middleware('guest')->name('change.perform');
 Route::get('/dashboard', [HomeController::class, 'index'])->name('home')->middleware('auth');
 Route::post('/usermanagement/store', [UsermanagementController::class, 'store']);
+//added inventory route
+Route::post('/inventory/store', [InventoryController::class, 'store']);
 
 
 
