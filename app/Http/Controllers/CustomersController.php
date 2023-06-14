@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Customer;
+use App\Models\Customers;
 
-class CustomerController extends Controller
+class CustomersController extends Controller
 {
     public function index()
     {
-        $customers = Customer::all();
+        $customers = Customers::all();
         return view('customers.index', compact('customers'));
     }
 
@@ -20,42 +20,42 @@ class CustomerController extends Controller
 
     public function store(Request $request)
     {
-        $customer = new Customer;
-        $customer->name = $request->name;
-        $customer->email = $request->email;
-        $customer->phone = $request->phone;
-        $customer->save();
+        $customers = new Customers;
+        $customers->name = $request->name;
+        $customers->email = $request->email;
+        $customers->phone = $request->phone;
+        $customers->save();
 
         return redirect()->route('customers.index')->with('success', 'Customer added successfully.');
     }
 
     public function show($id)
     {
-        $customer = Customer::find($id);
-        return view('customers.show', compact('customer'));
+        $customers = Customers::find($id);
+        return view('customers.show', compact('customers'));
     }
 
     public function edit($id)
     {
-        $customer = Customer::find($id);
-        return view('customers.edit', compact('customer'));
+        $customers = Customers::find($id);
+        return view('customers.edit', compact('customers'));
     }
 
     public function update(Request $request, $id)
     {
-        $customer = Customer::find($id);
-        $customer->name = $request->name;
-        $customer->email = $request->email;
-        $customer->phone = $request->phone;
-        $customer->save();
+        $customers = Customers::find($id);
+        $customesr->name = $request->name;
+        $customers->email = $request->email;
+        $customers->phone = $request->phone;
+        $customers->save();
 
         return redirect()->route('customers.index')->with('success', 'Customer updated successfully.');
     }
 
     public function destroy($id)
     {
-        $customer = Customer::find($id);
-        $customer->delete();
+        $customers = Customers::find($id);
+        $customers->delete();
 
         return redirect()->route('customers.index')->with('success', 'Customer deleted successfully.');
     }

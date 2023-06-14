@@ -6,7 +6,9 @@
     <div class="row">
         <div class="col-md-11">
             <div class="card">
-                <div class="card-header">User-management</div>
+                <div class="card-header">
+                    <h1>User-management</h1>
+                </div>
                 <div class="card-body">
                     <a href="{{ url('/usermanagement/create') }}" class="btn btn-success btn-sm" title="Add New detail">
                         <i class="fa fa-plus" aria-hidden="true"></i> Add New

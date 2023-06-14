@@ -29,7 +29,7 @@ use App\Http\Controllers\cardocumentsController;
 use App\Http\Controllers\VehiclesalesController;
 use App\Http\Controllers\inventoryController;
 use App\Http\Controllers\contractsController;
-use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\UsermanagementController;
 
 
@@ -53,7 +53,7 @@ Route::resource('/customers', CustomersController::class);
 Route::resource('/vehiclesales', VehiclesalesController::class);
 Route::resource('/usermanagement', UsermanagementController::class);
 
-Route::resource('/customers', CustomerController::class);
+Route::resource('/customers', CustomersController::class);
 
 Route::get('/register', [RegisterController::class, 'create'])->middleware('guest')->name('register');
 Route::post('/register', [RegisterController::class, 'store'])->middleware('guest')->name('register.perform');
@@ -68,6 +68,7 @@ Route::get('/dashboard', [HomeController::class, 'index'])->name('home')->middle
 Route::post('/usermanagement/store', [UsermanagementController::class, 'store']);
 //added inventory route
 Route::post('/inventory/store', [InventoryController::class, 'store']);
+Route::post('/customers/store', [CustomersController::class, 'store']);
 
 
 

@@ -1,7 +1,9 @@
 @extends('usermanagement.layout')
 @section('content')
 <div class="card">
-  <div class="card-header">User Management Page</div>
+  <div class="card-header">
+    <h1>User Management Page</h1>
+  </div>
   <div class="card-body">
 
     <form action="{{ url('usermanagement/' .$usermanagement->id) }}" method="post">

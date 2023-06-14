@@ -2,7 +2,9 @@
 @section('content')
 @include('layouts.navbars.auth.topnav', ['title' => 'User Management'])
 <div class="card">
-    <div class="card-header">User Management Page</div>
+    <div class="card-header">
+        <h1>User Management Page</h1>
+    </div>
     <div class="card-body">
 
         <form action="{{ url('usermanagement') }}" method="post">
