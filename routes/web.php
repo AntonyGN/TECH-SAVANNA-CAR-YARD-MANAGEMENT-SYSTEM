@@ -68,6 +68,7 @@ Route::get('/dashboard', [HomeController::class, 'index'])->name('home')->middle
 Route::post('/usermanagement/store', [UsermanagementController::class, 'store']);
 //added inventory route
 Route::post('/inventory/store', [InventoryController::class, 'store']);
+//added customerscontoller route 
 Route::post('/customers/store', [CustomersController::class, 'store']);
 
 
