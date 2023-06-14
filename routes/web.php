@@ -36,9 +36,18 @@ use App\Http\Controllers\UsermanagementController;
 Route::get('/', function () {
 	return redirect('/dashboard');
 })->middleware('auth');
+
+//added route for download document
+Route::get('/cardocuments/{id}/download', [CardocumentsController::class, 'download'])->name('cardocuments.download');
+
 Route::resource('/cardetails', CardetailsController::class);
 Route::resource('/contracts', ContractsController::class);
 Route::resource('/cardocuments', CardocumentsController::class);
+
+
+//added route for upload Car document
+Route::post('/cardocuments/upload', [CardocumentsController::class, 'upload'])->name('cardocuments.upload');
+
 Route::resource('/inventory', InventoryController::class);
 Route::resource('/customers', CustomersController::class);
 Route::resource('/vehiclesales', VehiclesalesController::class);
