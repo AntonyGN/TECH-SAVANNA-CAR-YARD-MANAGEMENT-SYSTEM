@@ -9,5 +9,10 @@ class Cardocuments extends Model
 {
     protected $table = 'cardocuments';
     protected $primaryKey = 'id';
-    protected $fillable = ['logbook', 'registrationdocument', 'roadworthiness'];
+    protected $fillable = ['logbook', 'registrationdocument', 'roadworthiness', 'document'];
+
+
+    protected $casts = [
+        'document' => 'binary',
+    ];
 }
