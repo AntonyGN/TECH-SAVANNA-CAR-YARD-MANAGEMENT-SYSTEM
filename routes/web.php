@@ -28,7 +28,7 @@ use App\Http\Controllers\cardetailsController;
 use App\Http\Controllers\cardocumentsController;
 use App\Http\Controllers\VehiclesalesController;
 use App\Http\Controllers\inventoryController;
-use App\Http\Controllers\contractsController;
+use App\Http\Controllers\ContractsController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\UsermanagementController;
 
@@ -70,7 +70,8 @@ Route::post('/usermanagement/store', [UsermanagementController::class, 'store'])
 Route::post('/inventory/store', [InventoryController::class, 'store']);
 //added customerscontoller route 
 Route::post('/customers/store', [CustomersController::class, 'store']);
-
+//added contracts route 
+Route::post('/contracts/store', [ContractsController::class, 'store']);
 
 
 

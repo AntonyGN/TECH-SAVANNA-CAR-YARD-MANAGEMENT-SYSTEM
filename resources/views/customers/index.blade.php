@@ -1,7 +1,7 @@
 @extends('layouts.app', ['class' => 'g-sidenav-show bg-gray-100'])
 
 @section('content')
-@include('layouts.navbars.auth.topnav', ['title' => 'User Management'])
+@include('layouts.navbars.auth.topnav', ['title' => 'Customer Management'])
 <div class="container">
     <div class="row">
         <div class="col-md-11">
@@ -11,7 +11,9 @@
 
                     <div class="col-md-9">
                         <div class="card">
-                            <div class="card-header"><h1>Customers Page</h1></div>
+                            <div class="card-header">
+                                <h1>Customers Page</h1>
+                            </div>
                             <div class="card-body">
                                 <a href="{{ url('/customers/create') }}" class="btn btn-success btn-sm" title="Add New Information">
                                     <i class="fa fa-plus" aria-hidden="true"></i> Add New

@@ -44,7 +44,7 @@ class CustomersController extends Controller
     public function update(Request $request, $id)
     {
         $customers = Customers::find($id);
-        $customesr->name = $request->name;
+        $customers->name = $request->name;
         $customers->email = $request->email;
         $customers->phone = $request->phone;
         $customers->save();
