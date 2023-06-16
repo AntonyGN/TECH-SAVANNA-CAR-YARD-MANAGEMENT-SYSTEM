@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Contracts;
+
 use Illuminate\Http\Request;
+use App\Models\Contracts;
 
 class ContractsController extends Controller
 {
@@ -24,7 +25,7 @@ class ContractsController extends Controller
     {
         $input = $request->all();
         Contracts::create($input);
-        return redirect('contracts')->with('flash_message', 'Contracts Addedd!');  
+        return redirect('contracts')->with('flash_message', 'contracts Added!');  
     }
 
     
