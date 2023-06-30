@@ -45,7 +45,7 @@ Route::resource('/contracts', ContractsController::class);
 Route::resource('/cardocuments', CardocumentsController::class);
 
 
-//added route for upload Car document
+//added route to upload Car document
 Route::post('/cardocuments/upload', [CardocumentsController::class, 'upload'])->name('cardocuments.upload');
 
 Route::resource('/inventory', InventoryController::class);
