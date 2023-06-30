@@ -10,8 +10,9 @@
 
 
         <div class="card-body">
-            <h5 class="card-title">Name : {{ $usermanagement->name }}</h5>
-            <p class="card-text">Role : {{ $usermanagement->role }}</p>
+            <h5 class="card-title">Name : {{ $usermanagement->username }}</h5>
+            <p class="card-text">Role : {{ $usermanagement->email }}</p>
+            <p class="card-text">Role : {{ $usermanagement->password }}</p>
 
 
 

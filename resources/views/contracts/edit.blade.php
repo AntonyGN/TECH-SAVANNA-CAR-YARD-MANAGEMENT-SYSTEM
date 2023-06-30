@@ -27,6 +27,10 @@
             <input type="text" name="contractterms" id="contractterms" value="{{$contracts->contractterms}}" class="form-control"></br>
             <label>Termination</label></br>
             <input type="text" name="termination" id="termination" value="{{$contracts->termination}}" class="form-control"></br>
+            <label>Purchase Agreement Document</label></br>
+            <input type="text" name="purchaseagreementdocument" id="purchaseagreementdocument" class="form-control"></br>
+            <label>Sales Agreement Document</label></br>
+            <input type="text" name="salesagreementdocument" id="salesagreementdocument" class="form-control"></br>
             <input type="submit" value="Update" class="btn btn-success"></br>
           </form>
 

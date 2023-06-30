@@ -20,6 +20,8 @@
             <p class="card-text">Duration : {{ $contracts->duration }}</p>
             <p class="card-text">Contractterms : {{ $contracts->contractterms }}</p>
             <p class="Termination">Date : {{ $contracts->termination}}</p>
+            <p class="card-text">Purschaseagreementdocument : {{ $contracts->purchaseagreementdocument }}</p>
+            <p class="card-text">Salesagreementdocument : {{ $contracts->Salesagreementdocument }}</p>
           </div>
 
           </hr>

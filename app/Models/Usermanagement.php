@@ -10,8 +10,11 @@ class Usermanagement extends Model
     protected $table = 'usermanagement';
     protected $primaryKey = 'id';
     protected $fillable = [
-        'name',
-        'role',
+        'username',
+        'email',
+        'password',
 
     ];
+
+    
 }

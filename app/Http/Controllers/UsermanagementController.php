@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Usermanagement;
+use App\Models\User;
 
 class UsermanagementController extends Controller
 {
@@ -85,5 +86,24 @@ class UsermanagementController extends Controller
     {
         usermanagement::destroy($id);
         return redirect('usermanagement')->with('flash_message', 'usermanagement updated');
+    }
+
+    public function synchronizeUsers()
+    {
+        $userManagementData = UserManagement::all();
+
+        foreach ($userManagementData as $userManagement) {
+            User::updateOrCreate(
+                ['email' => $userManagement->email],
+                [
+                    'username' => $userManagement->username,
+                    'email' => $userManagement->email,
+                    'password' => bcrypt($userManagement->password)
+                ]
+            );
+        }
+
+        // Optionally, you can redirect the user to another page after synchronization.
+        return redirect()->route('usermanagement.index')->with('success', 'User synchronization completed.');
     }
 }

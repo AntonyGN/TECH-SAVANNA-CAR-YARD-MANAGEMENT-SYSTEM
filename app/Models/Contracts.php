@@ -9,5 +9,5 @@ class Contracts extends Model
 {
     protected $table = 'contracts';
     protected $primaryKey = 'id';
-    protected $fillable = ['contractnumber', 'contracttype', 'date','duration','contractterms','termination'];
+    protected $fillable = ['contractnumber', 'contracttype', 'date', 'duration', 'contractterms', 'termination', 'salesagreementdocument', 'purchaseagreementdocument'];
 }

@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('usermanagement', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('role');
+            $table->string('username');
+            $table->string('email');
+            $table->string('password');
             $table->timestamps();
         });
     }

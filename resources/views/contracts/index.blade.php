@@ -26,7 +26,9 @@
                                     <th>Date</th>
                                     <th>Duration</th>
                                     <th>Contractterms</th>
-                                    <th>Terminationn</th>
+                                    <th>Termination</th>
+                                    <th>Purchaseagreementdocument</th>
+                                    <th>Salesagreementdocument</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -39,6 +41,8 @@
                                     <td>{{ $item->duration}}</td>
                                     <td>{{ $item->contractterms}}</td>
                                     <td>{{ $item->termination}}</td>
+                                    <td>{{ $item->purchaseagreementdocument}}</td>
+                                    <td>{{ $item->salesagreementdocument}}</td>
 
                                     <td>
                                         <a href="{{ url('/contracts/' . $item->id) }}" title="View contracts"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>

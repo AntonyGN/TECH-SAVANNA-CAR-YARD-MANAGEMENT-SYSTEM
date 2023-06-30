@@ -8,6 +8,11 @@
             <div class="card">
                 <div class="card-header">
                     <h1>User-management</h1>
+                    <form method="POST" action="{{ route('usermanagement.synchronize') }}">
+                        @csrf
+                        <button type="submit">Synchronize Users</button>
+                    </form>
+
                 </div>
                 <div class="card-body">
                     <a href="{{ url('/usermanagement/create') }}" class="btn btn-success btn-sm" title="Add New detail">
@@ -21,15 +26,17 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Name</th>
-                                    <th>Role</th>
+                                    <th>Email</th>
+                                    <th>Password</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($usermanagement as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->role }}</td>
+                                    <td>{{ $item->username }}</td>
+                                    <td>{{ $item->email }}</td>
+                                    <td>{{ $item->password }}</td>
 
                                     <td>
 

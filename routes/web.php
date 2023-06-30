@@ -73,6 +73,11 @@ Route::post('/customers/store', [CustomersController::class, 'store']);
 //added contracts route 
 Route::post('/contracts/store', [ContractsController::class, 'store']);
 
+Route::post('/usermanagement/synchronize', [UserManagementController::class, 'synchronizeUsers'])->name('usermanagement.synchronize');
+
+
+
+
 
 
 Route::group(['middleware' => 'auth'], function () {

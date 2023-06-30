@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('duration');
             $table->string('contractterms');
             $table->string('termination');
+            $table->string('salesagreementdocument');
+            $table->string('purchaseagreementdocument');
             $table->timestamps();
             
         });

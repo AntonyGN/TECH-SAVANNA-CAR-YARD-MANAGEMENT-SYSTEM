@@ -11,8 +11,10 @@
       @method("PATCH")
       <input type="hidden" name="id" id="id" value="{{$usermanagement->id}}" id="id" />
       <label>Name</label></br>
-      <input type="text" name="name" id="name" value="{{$usermanagement->name}}" class="form-control"></br>
-      <label>Role</label></br>
+      <input type="text" name="username" id="username" value="{{$usermanagement->username}}" class="form-control"></br>
+      <label>Email</label></br>
+      <input type="text" name="role" id="model" value="{{$usermanagement->role}}" class="form-control"></br>
+      <label>Password</label></br>
       <input type="text" name="role" id="model" value="{{$usermanagement->role}}" class="form-control"></br>
 
       <input type="submit" value="Save" class="btn btn-success"></br>
